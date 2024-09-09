@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias.modelado.practica2.iterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

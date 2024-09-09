@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias.modelado.practica2.iterator;
 
 /**
  * <p>Interface para colecciones, con operaciones para agregar y eliminar

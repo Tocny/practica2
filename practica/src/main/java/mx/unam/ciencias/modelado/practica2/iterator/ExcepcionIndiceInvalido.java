@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias.modelado.practica2.iterator;
 
 /**
  * Clase para excepciones de índices de lista inválidos.

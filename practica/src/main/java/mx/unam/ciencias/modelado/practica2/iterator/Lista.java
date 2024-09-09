@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias.modelado.practica2.iterator;
 
 import java.util.Comparator;
 import java.util.Iterator;
