@@ -14,7 +14,7 @@ public abstract class Aditamento extends Vehiculo{
      * Constructor de la clase
      * @param vehiculo para asignar al atributo del mismo nombre.
      */
-    public Aditamento(Vechiculo vehiculo){
+    public Aditamento(Vehiculo vehiculo){
         this.vehiculo = vehiculo;
     }
 
