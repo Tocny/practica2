@@ -17,6 +17,13 @@ public class VehiculoIterable implements Iterable<Vehiculo>{
     public VehiculoIterable(){
         vehiculos = new ArrayList<>();
     }
+
+    /**
+     * Método para agregar un vehículo a la lista.
+     */
+    public void agregarVehiculo(Vehiculo vehiculo){
+        vehiculos.add(vehiculo;)
+    }
     
     /**
      * Método que regresa un iterador.
