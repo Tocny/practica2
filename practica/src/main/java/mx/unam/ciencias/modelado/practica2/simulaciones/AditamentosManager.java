@@ -73,7 +73,7 @@ public class AditamentosManager{
      * Método para elegir uno de los vehículos del iterable.
      * @return el vehículo escogido por el usuario.
      */
-    public void seleccionaAditamentos(){
+    public Vehiculo seleccionaAditamentos(){
         Colors.println("Seleccione los aditamentos para el vehículo.", Colors.GREEN);
 
         while(contadorAditamentos < MAXIMO_ADITAMENTOS){
@@ -94,6 +94,8 @@ public class AditamentosManager{
             }
 
         }
+        
+        return vehiculo;
     }
 
     /**
