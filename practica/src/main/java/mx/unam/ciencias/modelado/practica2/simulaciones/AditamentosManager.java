@@ -71,7 +71,7 @@ public class AditamentosManager{
 
     /**
      * Método para elegir uno de los vehículos del iterable.
-     * @return el vehículo escogido por el usuario.
+     * @return el vehículo tuneado por el usuario.
      */
     public Vehiculo seleccionaAditamentos(){
         Colors.println("Seleccione los aditamentos para el vehículo.", Colors.GREEN);
@@ -94,7 +94,7 @@ public class AditamentosManager{
             }
 
         }
-        
+
         return vehiculo;
     }
 

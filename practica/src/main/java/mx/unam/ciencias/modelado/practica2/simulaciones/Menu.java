@@ -5,6 +5,9 @@ public class Menu{
     
     public void ejecutaMenu(){
         vehiculo = VehiculoManager.seleccionaVehiculo();
-        vehiculo = AditamentosManager(vehiculo).seleccionaAditamentos();
+        
+        AditamentosManager aditamentos = new AditamentosManager(vehiculo);
+
+        vehiculo = aditamentos.seleccionaAditamentos();
     }
 }
