@@ -6,7 +6,7 @@ public class EstadoEsperando implements EstadoVehiculo{
 
     @Override
     public String encender(Vehiculo vehiculo){
-        return Colors.GREEN + Colors.HIGH_INTENSITY + "No se es posible apagar el vehiculo, se encuentra en movimiento" + Colors.RESTORE;
+        return Colors.GREEN + Colors.HIGH_INTENSITY + "No se es posible apagar el vehiculo mientras se espera un viaje" + Colors.RESTORE;
     }
 
     @Override
