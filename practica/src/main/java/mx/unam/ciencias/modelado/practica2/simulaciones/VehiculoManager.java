@@ -35,7 +35,7 @@ public class VehiculoManager{
      */
     pubic String menuVehiculos(){
         StringBuilder sb = new StringBuilder();
-        sb.append("");
+        sb.append("Vehiculos disponibles:");
         int indice = 0;
         
         for(Vehiculo vehiculo: vehiculos){
@@ -54,7 +54,6 @@ public class VehiculoManager{
      * @return el vehículo escogido por el usuario.
      */
     public Vehiculo seleccionaVehiculo(){
-        Colors.println("Vehículos disponibles", Colors.GREEN);
         Colors.println(menuVehiculos(), Colors.GREEN);
         int eleccion = MetodosGet.getInt("Ingrese su elección: ", "Entrada inválida.", 0, vehiculos.getLongitud()-1);
         return vehiculos.get(eleccion);
