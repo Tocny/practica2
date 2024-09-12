@@ -2,6 +2,7 @@ package mx.unam.ciencias.modelado.practica2.iterator;
 
 import java.util.Iterator;
 import java.util.List;
+import mx.unam.ciencias.modelado.practica2.template.*;
 
 /**
  * Clase que implementa la interfaz iterador del paquete java.util

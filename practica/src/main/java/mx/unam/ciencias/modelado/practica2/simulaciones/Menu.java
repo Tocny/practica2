@@ -5,7 +5,7 @@ import mx.unam.ciencias.modelado.practica2.template.*;
 public class Menu{
     Vehiculo vehiculo = new VehiculoNulo();
     VehiculoManager selectorVehiculos;
-    AditamentosManager selectoAditamentos;
+    AditamentosManager selectorAditamentos;
     DestinosManager selectorDestinos;
     Vehiculo modelo;
     Vehiculo vehiculoUsuario;
@@ -16,8 +16,8 @@ public class Menu{
         selectorVehiculos = new VehiculoManager();
         modelo = selectorVehiculos.seleccionaVehiculo();
         
-        selectoAditamentos = new AditamentosManager(modelo);
-        vehiculoUsuario = aditamentos.seleccionaAditamentos();
+        selectorAditamentos = new AditamentosManager(modelo);
+        vehiculoUsuario = selectorAditamentos.seleccionaAditamentos();
 
         selectorDestinos = new DestinosManager();
         selectorDestinos.simularViaje(modelo, vehiculoUsuario);

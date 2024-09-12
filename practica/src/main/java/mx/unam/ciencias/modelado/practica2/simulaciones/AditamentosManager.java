@@ -1,7 +1,7 @@
 package mx.unam.ciencias.modelado.practica2.simulaciones;
 
 import mx.unam.ciencias.modelado.practica2.decorator.*;
-import mx.unam.ciencias.modelado.practica2.Vehiculo.*;
+import mx.unam.ciencias.modelado.practica2.template.*;
 import mx.unam.ciencias.modelado.practica2.common.*;
 import mx.unam.ciencias.modelado.practica2.iterator.*;
 
@@ -84,7 +84,7 @@ public class AditamentosManager{
                 break;
             }
 
-            aplicaAditamento(aditamentos.get(eleccion));
+            aplicaAditamento((Aditamento) aditamentos.get(eleccion));
 
             ++contadorAditamentos;
 

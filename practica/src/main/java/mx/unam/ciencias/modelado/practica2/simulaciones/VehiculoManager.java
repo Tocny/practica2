@@ -33,15 +33,15 @@ public class VehiculoManager{
      * Método que genera el menú de los vehiculos disponibles.
      * @return una cadena con vehículos numerados.
      */
-    pubic String menuVehiculos(){
+    public String menuVehiculos(){
         StringBuilder sb = new StringBuilder();
         sb.append("Vehiculos disponibles:");
         int indice = 0;
         
         for(Vehiculo vehiculo: vehiculos){
-            sb.append(indice++)
-            sb.append(". ")
-            sb.append(vehiculo.getClass().getSimpleName())
+            sb.append(indice++);
+            sb.append(". ");
+            sb.append(vehiculo.getClass().getSimpleName());
             sb.append("\n");
 
         }

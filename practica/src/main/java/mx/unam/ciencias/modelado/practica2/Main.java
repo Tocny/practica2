@@ -1,12 +1,14 @@
 package mx.unam.ciencias.modelado.practica2;
 
-import mx.unam.ciencias.modelado.practica2.common.Colors;
+import mx.unam.ciencias.modelado.practica2.simulaciones.Menu;
 
 /**Clase Main */
 public class Main{
 
+    public static Menu menu = new Menu();
+
     public static void main(String[] args){
-        Colors.println("HolaMundo", Colors.MAGENTA);
+        menu.ejecutaMenu();
     }
 
 }

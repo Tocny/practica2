@@ -4,6 +4,7 @@ import java.lang.Iterable;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import mx.unam.ciencias.modelado.practica2.template.*;
 
 /**
  * Clase que implementa la interfaz Iterable de la clase java.lang

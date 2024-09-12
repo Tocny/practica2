@@ -7,22 +7,22 @@ import mx.unam.ciencias.modelado.practica2.state.EstadoEsperando;
 public class Scooter extends Vehiculo{
 
     // Constructor
-    public Scooter(EstadoVehiculo estado) {
-        super(estado);
-        }
-@Override
-    public void sigueRuta(){
+    public Scooter() {
+        super.setEstado(new EstadoEsperando());
+    }
+    
+    @Override public void sigueRuta(){
         System.out.println("El scooter sigue la ruta.");
         super.setEstado(new EstadoEnMovimiento());
     }
-@Override
-    public void alertaCombustible(){
+    
+    @Override public void alertaCombustible(){
         super.setEstado(new EstadoEsperando());
         System.out.println("El scooter recarga su bateria.");
         super.setEstado(new EstadoEnMovimiento());
     }
-@Override 
-    public void descripcion(){
-        System.out.println("Scooter: ");
+    
+    @Override public String descripcion(){
+        return "Scooter: ";
     }
 }

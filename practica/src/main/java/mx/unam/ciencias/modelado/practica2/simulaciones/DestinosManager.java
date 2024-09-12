@@ -3,6 +3,7 @@ package mx.unam.ciencias.modelado.practica2.simulaciones;
 import mx.unam.ciencias.modelado.practica2.common.*;
 import mx.unam.ciencias.modelado.practica2.template.*;
 import mx.unam.ciencias.modelado.practica2.iterator.*;
+import java.util.Map;
 
 public class DestinosManager{
 
@@ -47,9 +48,9 @@ public class DestinosManager{
      */
     public String menuDestinos(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Destinos disponibles:")
+        sb.append("Destinos disponibles: \n");
         for(Map.Entry<String, Coordenadas> destino : destinos){
-            sb.apppend(destino.getKey() + "\n");
+            sb.append(destino.getKey() + "\n");
         }
         return sb.toString();
     }
@@ -63,7 +64,7 @@ public class DestinosManager{
         String destino;
         while(true){
             destino = MetodosGet.getString("Ingrese su ubicación: ", "Error, intente de nuevo.");
-            if(!destinos.contieneDestino(ubicacion)){
+            if(!destinos.contieneDestino(destino)){
                 Colors.println("No es una ubicación, intente de nuevo.", Colors.RED);
             } else{
                 break;
@@ -75,10 +76,10 @@ public class DestinosManager{
     /**Método para seleccionar ubicacion y destino. */
     public void seleccionaPartidaDestino(){
         this.ubicacion = seleccionarDestino();
-        this.coordenadasUbicacion = getCoordenadas(this.ubicacion);
+        this.coordenadasUbicacion = destinos.getCoordenadas(this.ubicacion);
 
         this.destino = seleccionarDestino();
-        this.coordenadasDestino = getCoordenadas(this.destino);
+        this.coordenadasDestino = destinos.getCoordenadas(this.destino);
 
     }
 
@@ -89,7 +90,7 @@ public class DestinosManager{
      */
     public double calcularDistancia(){
         double dLatitud = coordenadasDestino.getLatitud() - coordenadasUbicacion.getLatitud();
-        double dAltitud = coordenadasDestino.getAltitud() - coordenadasUbicacion.getAltitud();
+        double dAltitud = coordenadasDestino.getLatitud() - coordenadasUbicacion.getLatitud();
         return Math.sqrt(dLatitud*dLatitud - dAltitud*dAltitud);
     }
 
@@ -158,6 +159,6 @@ public class DestinosManager{
     public void simularViaje(Vehiculo modelo, Vehiculo vehiculoUsuario){
         seleccionaPartidaDestino();
         calcularTiempoViaje(modelo);
-        vehiculoUsuario.sigueRuta();
+        vehiculoUsuario.ejecutaViaje();
     }
 }

@@ -5,12 +5,8 @@ import mx.unam.ciencias.modelado.practica2.state.*;
 public abstract class Vehiculo {
     protected EstadoVehiculo estadoActual;
 
-    // Constructor
-    public Vehiculo(EstadoVehiculo estado) {
-        this.estadoActual = estado;
-    }
-    protected void ejecutaViaje(){
-        descripcion();
+    public void ejecutaViaje(){
+        System.out.println(descripcion());
         empiezaViaje();
         sigueRuta();
         alertaCombustible();
@@ -20,9 +16,11 @@ public abstract class Vehiculo {
     protected void esperaViaje(){
         setEstado(new EstadoEsperando());
     }
-    protected abstract void sigueRuta();
-    protected abstract void alertaCombustible();
-    protected abstract void descripcion();
+
+    public abstract void sigueRuta();
+    public abstract void alertaCombustible();
+    public abstract String descripcion();
+
     protected void empiezaViaje(){
         System.out.println("Viaje empezado");
     }

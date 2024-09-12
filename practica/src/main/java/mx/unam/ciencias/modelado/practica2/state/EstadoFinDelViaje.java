@@ -2,25 +2,29 @@ package mx.unam.ciencias.modelado.practica2.state;
 import mx.unam.ciencias.modelado.practica2.common.Colors;
 import mx.unam.ciencias.modelado.practica2.template.*;
 
-public class EstadoEsperando implements EstadoVehiculo{
+public class EstadoFinDelViaje implements EstadoVehiculo{
 
     @Override
-    public String encender(Vehiculo vehiculo){
-        return Colors.RED + Colors.HIGH_INTENSITY + "Vehiculo apagado" + Colors.RESTORE;
+    public void encender(){
+        Colors.println("Vehiculo apagado", Colors.RED + Colors.HIGH_INTENSITY);
+        //return Colors.RED + Colors.HIGH_INTENSITY + "Vehiculo apagado" + Colors.RESTORE;
     }
 
     @Override
-    public String movimiento(Vehiculo vehiculo){
-        return Colors.BLACK + Colors.HIGH_INTENSITY + "El vehiculo no se encuentra en movimiento" + Colors.RESTORE;
+    public void movimiento(){
+        Colors.println("El vehiculo no se encuentra en movimiento", Colors.BLACK + Colors.HIGH_INTENSITY);
+        //return Colors.BLACK + Colors.HIGH_INTENSITY + "El vehiculo no se encuentra en movimiento" + Colors.RESTORE;
     }
 
     @Override
-    public String esperandoViaje(Vehiculo vehiculo){
-        return Colors.YELLOW + Colors.HIGH_INTENSITY + "Esperando por un nuevo viaje" + Colors.RESTORE;
+    public void esperandoViaje(){
+        Colors.println("Esperando por un nuevo viaje", Colors.YELLOW + Colors.HIGH_INTENSITY);
+        //return Colors.YELLOW + Colors.HIGH_INTENSITY + "Esperando por un nuevo viaje" + Colors.RESTORE;
     }
 
     @Override
-    public String abrirPuertas(Vehiculo vehiculo){
-        return Colors.CYAN + Colors.HIGH_INTENSITY + "Puertas abiertas" + Colors.RESTORE;
+    public void abrirPuertas(){
+        Colors.println("Puertas abiertas", Colors.CYAN + Colors.HIGH_INTENSITY);
+        //return Colors.CYAN + Colors.HIGH_INTENSITY + "Puertas abiertas" + Colors.RESTORE;
     }
 }

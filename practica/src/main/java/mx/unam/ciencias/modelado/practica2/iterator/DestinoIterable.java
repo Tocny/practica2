@@ -17,7 +17,7 @@ public class DestinoIterable implements Iterable<Map.Entry<String, Coordenadas>>
 
     /**Constructor de la clase, inicializa el Diccionario. */
     public DestinoIterable(){
-        this.diccionario = new HashMap<>;
+        this.diccionario = new HashMap<>();
     }
 
     /**

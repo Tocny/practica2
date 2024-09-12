@@ -26,7 +26,7 @@ public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>>
      * @return el método hasNext() del iterador.
      */
     @Override public boolean hasNext(){
-        return interador.hasNext();
+        return iterador.hasNext();
     }
 
     /**
@@ -42,7 +42,7 @@ public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>>
      * Usa el método remove() del iterador.
      */
     @Override public void remove(){
-        iterdor.remove();
+        iterador.remove();
     }
 
 }

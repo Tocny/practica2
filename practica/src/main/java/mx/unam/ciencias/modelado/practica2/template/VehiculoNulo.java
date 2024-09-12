@@ -13,15 +13,19 @@ import mx.unam.ciencias.modelado.practica2.state.EstadoEsperando;
 public class VehiculoNulo extends Vehiculo{
 
     /**Método de seguir ruta. */
-    public void sigueRuta(){
-        System.out.pritnln("Este vehiculo no existe.");
+    @Override public void sigueRuta(){
+        System.out.println("Este vehiculo no existe.");
         super.setEstado(new EstadoEnMovimiento());
     }
 
     /**Método de alerta de combustible. */
-    public void alertaCombustible(){
+    @Override public void alertaCombustible(){
         super.setEstado(new EstadoEsperando());
-        System.out.pritnln("Este vehiculo no existe.");
+        System.out.println("Este vehiculo no existe.");
         super.setEstado(new EstadoEnMovimiento());
+    }
+    
+    @Override public String descripcion(){
+        return "Este vehiculo no existe.";
     }
 }
