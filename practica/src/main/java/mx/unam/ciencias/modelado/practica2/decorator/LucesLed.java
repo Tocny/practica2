@@ -18,6 +18,6 @@ public class LucesLed extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Luces led"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Luces led";
+        return super.vehiculo.descripcion() + "\n-Luces led";
     }
 }

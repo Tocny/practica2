@@ -18,6 +18,6 @@ public class CamaraDeReversa extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Cámara de reversa"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Cámara de reversa";
+        return super.vehiculo.descripcion() + "\n-Cámara de reversa";
     }
 }

@@ -18,6 +18,6 @@ public class SuspensionRegulable extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Suspensión regulable"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Suspensión regulable";
+        return super.vehiculo.descripcion() + "\n-Suspensión regulable";
     }
 }

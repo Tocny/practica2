@@ -18,7 +18,7 @@ public class AleronDeportivo extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Alerón deportivo"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Alerón deportivo";
+        return super.vehiculo.descripcion() + "\n-Alerón deportivo";
     }
 
 }

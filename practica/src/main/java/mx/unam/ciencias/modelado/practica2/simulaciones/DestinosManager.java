@@ -130,13 +130,13 @@ public class DestinosManager{
     public double determinaVelocidad(Terreno terreno){
         switch (terreno) {
             case CARRETERA:
-                return 80.0;  
+                return 70.0;  
             case TERRACERIA:
-                return 40.0;  
+                return 80.0;  
             case CERRO:
-                return 30.0;  
+                return 90.0;  
             case URBANO:
-                return 50.0;  
+                return 35.0;  
             default:
                 return 0.0; 
         } 
@@ -151,7 +151,7 @@ public class DestinosManager{
         double distancia = calcularDistancia();
         this.terreno = determinaTerreno(vehiculo);
         double velocidad = determinaVelocidad(this.terreno);
-        return distancia/velocidad;
+        return 100*(distancia/velocidad);
     }
 
     /**

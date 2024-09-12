@@ -18,6 +18,6 @@ public class SensorDeEstacionamiento extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Sensor de estacionamiento"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Sensor de estacionamiento";
+        return super.vehiculo.descripcion() + "\n-Sensor de estacionamiento";
     }
 }

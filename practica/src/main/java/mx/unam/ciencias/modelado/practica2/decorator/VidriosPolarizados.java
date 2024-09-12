@@ -18,6 +18,6 @@ public class VidriosPolarizados extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Vidrios polarizados"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Vidrios polarizados";
+        return super.vehiculo.descripcion() + "\n-Vidrios polarizados";
     }
 }

@@ -18,6 +18,6 @@ public class DifusorDeAire extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Difusor de aire"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Difusor de aire";
+        return super.vehiculo.descripcion() + "\n-Difusor de aire";
     }
 }

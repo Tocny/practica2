@@ -18,6 +18,6 @@ public class LlantasTodoTerreno extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Llantas todo terreno"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Llantas todo terreno";
+        return super.vehiculo.descripcion() + "\n-Llantas todo terreno";
     }
 }

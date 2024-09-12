@@ -18,6 +18,6 @@ public class FarosNiebla extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Faros niebla"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Faros niebla";
+        return super.vehiculo.descripcion() + "\n-Faros niebla";
     }
 }

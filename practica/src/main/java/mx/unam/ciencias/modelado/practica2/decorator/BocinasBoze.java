@@ -18,6 +18,8 @@ public class BocinasBoze extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Bocinas Boze"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Bocinas Boze";
+        return super.vehiculo.descripcion() + "\n-Bocinas Boze";
     }
+
+
 }

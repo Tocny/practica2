@@ -18,6 +18,6 @@ public class RadioDeComunicacion extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Radio de comunicación"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + ", Radio de comunicación";
+        return super.vehiculo.descripcion() + "\n-Radio de comunicación";
     }
 }
