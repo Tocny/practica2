@@ -12,7 +12,7 @@ public class EstadoFinDelViaje implements EstadoVehiculo{
 
     @Override
     public void movimiento(){
-        Colors.println("El vehiculo no se encuentra en movimiento", Colors.BLACK + Colors.HIGH_INTENSITY);
+        Colors.println("El vehiculo no se encuentra en movimiento", Colors.MAGENTA + Colors.HIGH_INTENSITY);
         //return Colors.BLACK + Colors.HIGH_INTENSITY + "El vehiculo no se encuentra en movimiento" + Colors.RESTORE;
     }
 
