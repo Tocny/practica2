@@ -2,6 +2,7 @@ package mx.unam.ciencias.modelado.practica2.template;
 
 import mx.unam.ciencias.modelado.practica2.state.EstadoEnMovimiento;
 import mx.unam.ciencias.modelado.practica2.state.EstadoEsperando;
+import mx.unam.ciencias.modelado.practica2.simulaciones.Terreno;
 
 /** Clase concreta del vehiculo Scooter */
 public class Scooter extends Vehiculo{
@@ -11,8 +12,8 @@ public class Scooter extends Vehiculo{
         super.setEstado(new EstadoEsperando());
     }
     
-    @Override public void sigueRuta(){
-        System.out.println("El scooter sigue la ruta.");
+    @Override public void sigueRuta(Terreno terreno){
+        System.out.println("El scooter sigue la ruta mediante " + terreno.name().toLowerCase() + ".");
         super.setEstado(new EstadoEnMovimiento());
     }
     

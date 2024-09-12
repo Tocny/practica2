@@ -34,4 +34,8 @@ public class Coordenadas{
     public double getLongitud(){
         return longitud;
     }
+
+    @Override public String toString(){
+        return "(" +  latitud + "," + longitud + ")";
+    }
 }

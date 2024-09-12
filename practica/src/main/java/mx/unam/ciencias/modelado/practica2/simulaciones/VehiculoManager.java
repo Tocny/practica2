@@ -35,14 +35,11 @@ public class VehiculoManager{
      */
     public String menuVehiculos(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Vehiculos disponibles:");
+        sb.append("Vehiculos disponibles:\n");
         int indice = 0;
         
         for(Vehiculo vehiculo: vehiculos){
-            sb.append(indice++);
-            sb.append(". ");
-            sb.append(vehiculo.getClass().getSimpleName());
-            sb.append("\n");
+            sb.append("\t" + (indice++) + "." + vehiculo.getClass().getSimpleName() + "\n");
 
         }
 

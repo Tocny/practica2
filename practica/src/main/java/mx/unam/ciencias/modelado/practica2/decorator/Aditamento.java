@@ -1,6 +1,7 @@
 package mx.unam.ciencias.modelado.practica2.decorator;
 
 import mx.unam.ciencias.modelado.practica2.template.Vehiculo;
+import mx.unam.ciencias.modelado.practica2.simulaciones.Terreno;
 
 /**
  * Clase aditamento, referente al patrón de diseño decorator.
@@ -22,8 +23,8 @@ public abstract class Aditamento extends Vehiculo{
      * Método que sobrecarga el método sigue ruta.
      * @return la cadena del método sigueRuta() del vehiculo local.
      */
-    @Override public void sigueRuta(){
-        vehiculo.sigueRuta();
+    @Override public void sigueRuta(Terreno terreno){
+        vehiculo.sigueRuta(terreno);
     }
 
     /**

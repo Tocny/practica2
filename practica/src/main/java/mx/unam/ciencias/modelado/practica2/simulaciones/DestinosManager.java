@@ -33,7 +33,7 @@ public class DestinosManager{
         destinos.agregar("Xochimilco", new Coordenadas(19.25465, -99.10356));
         destinos.agregar("Polanco", new Coordenadas(19.433333333333, -99.2));
         destinos.agregar("Estadio Azteca", new Coordenadas(19.303055555556, -99.150555555556));
-        destinos.agregar("Torre Latino", new Coordenadas(19.433888888889, -99.140555555556));
+        destinos.agregar("Torre Latino", new Coordenadas(19.43388888888, -99.140555555556));
         destinos.agregar("Monumento a la Revolucion", new Coordenadas(19.4361792, -99.1546288));
         destinos.agregar("Auditorio Nacional", new Coordenadas(19.42478195, -99.194810503198));
         destinos.agregar("Cosmovitral", new Coordenadas(19.29363333, -99.65319167));
@@ -50,7 +50,7 @@ public class DestinosManager{
         StringBuilder sb = new StringBuilder();
         sb.append("Destinos disponibles: \n");
         for(Map.Entry<String, Coordenadas> destino : destinos){
-            sb.append(destino.getKey() + "\n");
+            sb.append("\t" + destino.getKey() + "\n");
         }
         return sb.toString();
     }
@@ -63,7 +63,7 @@ public class DestinosManager{
         Colors.println(menuDestinos(), Colors.GREEN);
         String destino;
         while(true){
-            destino = MetodosGet.getString("Ingrese su ubicación: ", "Error, intente de nuevo.");
+            destino = MetodosGet.getString("Ingrese el nombre de una ubicación: ", "Error, intente de nuevo.");
             if(!destinos.contieneDestino(destino)){
                 Colors.println("No es una ubicación, intente de nuevo.", Colors.RED);
             } else{
@@ -75,9 +75,11 @@ public class DestinosManager{
 
     /**Método para seleccionar ubicacion y destino. */
     public void seleccionaPartidaDestino(){
+        Colors.println("Ingrese su ubicación.", Colors.MAGENTA + Colors.HIGH_INTENSITY);
         this.ubicacion = seleccionarDestino();
         this.coordenadasUbicacion = destinos.getCoordenadas(this.ubicacion);
 
+        Colors.println("Ingrese el destino al que desea ir.", Colors.MAGENTA + Colors.HIGH_INTENSITY);
         this.destino = seleccionarDestino();
         this.coordenadasDestino = destinos.getCoordenadas(this.destino);
 
@@ -91,7 +93,7 @@ public class DestinosManager{
     public double calcularDistancia(){
         double dLatitud = coordenadasDestino.getLatitud() - coordenadasUbicacion.getLatitud();
         double dAltitud = coordenadasDestino.getLatitud() - coordenadasUbicacion.getLatitud();
-        return Math.sqrt(dLatitud*dLatitud - dAltitud*dAltitud);
+        return Math.sqrt(dLatitud*dLatitud + dAltitud*dAltitud);
     }
 
     /**
@@ -147,8 +149,8 @@ public class DestinosManager{
      */
     public double calcularTiempoViaje(Vehiculo vehiculo){
         double distancia = calcularDistancia();
-        Terreno terreno = determinaTerreno(vehiculo);
-        double velocidad = determinaVelocidad(terreno);
+        this.terreno = determinaTerreno(vehiculo);
+        double velocidad = determinaVelocidad(this.terreno);
         return distancia/velocidad;
     }
 
@@ -158,7 +160,8 @@ public class DestinosManager{
      */
     public void simularViaje(Vehiculo modelo, Vehiculo vehiculoUsuario){
         seleccionaPartidaDestino();
-        calcularTiempoViaje(modelo);
-        vehiculoUsuario.ejecutaViaje();
+        double tiempo = calcularTiempoViaje(modelo);
+        double distancia = calcularDistancia();
+        vehiculoUsuario.ejecutaViaje(terreno, destino, tiempo);
     }
 }

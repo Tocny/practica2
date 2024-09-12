@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica2.template;
 
 import mx.unam.ciencias.modelado.practica2.state.EstadoEnMovimiento;
 import mx.unam.ciencias.modelado.practica2.state.EstadoEsperando;
-
+import mx.unam.ciencias.modelado.practica2.simulaciones.Terreno;
 
 /**
  * Clase concreta del vehiculo VehiculoNulo.
@@ -13,7 +13,7 @@ import mx.unam.ciencias.modelado.practica2.state.EstadoEsperando;
 public class VehiculoNulo extends Vehiculo{
 
     /**Método de seguir ruta. */
-    @Override public void sigueRuta(){
+    @Override public void sigueRuta(Terreno terreno){
         System.out.println("Este vehiculo no existe.");
         super.setEstado(new EstadoEnMovimiento());
     }

@@ -56,15 +56,9 @@ public class AditamentosManager{
         int indice = 0;
         
         for(Vehiculo aditamento: aditamentos){
-            sb.append(indice++);
-            sb.append(". ");
-            sb.append(aditamento.getClass().getSimpleName());
-            sb.append("\n");
+            sb.append("\t" + (indice++) + "." + aditamento.getClass().getSimpleName() + "\n");
         }
-        sb.append(aditamentos.getLongitud());
-        sb.append(". ");
-        sb.append("Proceder con el viaje");
-        sb.append("\n");
+        sb.append("\t" + aditamentos.getLongitud() + ". Proceder con el viaje.");
 
         return sb.toString();
     }
