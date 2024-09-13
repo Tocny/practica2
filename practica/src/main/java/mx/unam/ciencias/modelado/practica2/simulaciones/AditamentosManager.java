@@ -33,7 +33,7 @@ public class AditamentosManager{
     }
 
     /**Método para agregar elementos al iterable. */
-    public void generaListaAditamentos(){
+    private void generaListaAditamentos(){
         Vehiculo vehiculoNulo = new VehiculoNulo();
         aditamentos.agregarVehiculo(new FarosNiebla(vehiculoNulo));
         aditamentos.agregarVehiculo(new VidriosPolarizados(vehiculoNulo));
@@ -53,7 +53,7 @@ public class AditamentosManager{
      * Método que genera el menú de los aditamentos disponibles.
      * @return una cadena con vehículos numerados.
      */
-    public String menuAditamentos(){
+    private String menuAditamentos(){
         StringBuilder sb = new StringBuilder();
         sb.append("\n Aditamentos disponibles:");
         int indice = 0;
@@ -97,7 +97,7 @@ public class AditamentosManager{
      * Método encargado de aplicar el aditamento sobre el vehículo local.
      * @param aditamento el aditamento a colocar.
      */
-    public void aplicaAditamento(Aditamento aditamento){
+    private void aplicaAditamento(Aditamento aditamento){
         if (aditamento instanceof FarosNiebla) {
             vehiculo = new FarosNiebla(vehiculo);
 

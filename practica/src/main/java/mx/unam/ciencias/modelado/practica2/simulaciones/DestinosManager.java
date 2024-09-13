@@ -29,7 +29,7 @@ public class DestinosManager{
     /**
      * Método que llena el iterable de posibles destinos.
      */
-    public void generaDestinos(){
+    private void generaDestinos(){
         destinos.agregar("Xochimilco", new Coordenadas(19.25465, -99.10356));
         destinos.agregar("Polanco", new Coordenadas(19.433333333333, -99.2));
         destinos.agregar("Estadio Azteca", new Coordenadas(19.303055555556, -99.150555555556));
@@ -46,7 +46,7 @@ public class DestinosManager{
      * Método para generar el menú de destinos.
      * @return una cadena con todos los destinos del iterable.
      */
-    public String menuDestinos(){
+    private String menuDestinos(){
         StringBuilder sb = new StringBuilder();
         sb.append("Destinos disponibles: \n");
         for(Map.Entry<String, Coordenadas> destino : destinos){
@@ -59,7 +59,7 @@ public class DestinosManager{
      * Método para seleccionar un destino del iterable.
      * @return El nombre del destino (key) seleccionado.
      */
-    public String seleccionarDestino(){
+    private String seleccionarDestino(){
         Colors.println(menuDestinos(), Colors.GREEN);
         String destino;
         while(true){
@@ -90,7 +90,7 @@ public class DestinosManager{
      * El calculo es una mera formalidad porque lo considera como si estuvieran en un plano.
      * @return la distancia entre los dos puntos.
      */
-    public double calcularDistancia(){
+    private double calcularDistancia(){
         double dLatitud = coordenadasDestino.getLatitud() - coordenadasUbicacion.getLatitud();
         double dAltitud = coordenadasDestino.getLatitud() - coordenadasUbicacion.getLatitud();
         return Math.sqrt(dLatitud*dLatitud + dAltitud*dAltitud);
@@ -101,7 +101,7 @@ public class DestinosManager{
      * @param vehiculo una instancia de Vehiculo.
      * @return Un atributo de la enumeracion Terreno.
      */
-    public Terreno determinaTerreno(Vehiculo vehiculo){
+    private Terreno determinaTerreno(Vehiculo vehiculo){
         if(vehiculo instanceof Carro){
             return Terreno.CARRETERA;
 
@@ -127,7 +127,7 @@ public class DestinosManager{
      * @param terreno un atributo de la enumeracion Terreno.
      * @return el escalar de velocidad para la ruta.
      */
-    public double determinaVelocidad(Terreno terreno){
+    private double determinaVelocidad(Terreno terreno){
         switch (terreno) {
             case CARRETERA:
                 return 70.0;  
@@ -147,7 +147,7 @@ public class DestinosManager{
      * @param vehiculo una instancia de vehiculo.
      * @return el tiempo que se tardará en realizar el viaje.
      */
-    public double calcularTiempoViaje(Vehiculo vehiculo){
+    private double calcularTiempoViaje(Vehiculo vehiculo){
         double distancia = calcularDistancia();
         this.terreno = determinaTerreno(vehiculo);
         double velocidad = determinaVelocidad(this.terreno);

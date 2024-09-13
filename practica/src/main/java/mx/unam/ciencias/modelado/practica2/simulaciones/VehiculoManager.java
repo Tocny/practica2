@@ -21,7 +21,7 @@ public class VehiculoManager{
     }
 
     /**Método para agregar elementos al iterable. */
-    public void generaListaVehiculos(){
+    private void generaListaVehiculos(){
         vehiculos.agregarVehiculo(new Autobus());
         vehiculos.agregarVehiculo(new Carro());
         vehiculos.agregarVehiculo(new Motocicleta());
@@ -33,7 +33,7 @@ public class VehiculoManager{
      * Método que genera el menú de los vehiculos disponibles.
      * @return una cadena con vehículos numerados.
      */
-    public String menuVehiculos(){
+    private String menuVehiculos(){
         StringBuilder sb = new StringBuilder();
         sb.append("\nVehiculos disponibles:");
         int indice = 0;
