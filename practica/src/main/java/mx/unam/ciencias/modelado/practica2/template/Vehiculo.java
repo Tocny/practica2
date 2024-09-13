@@ -8,6 +8,11 @@ public abstract class Vehiculo {
     /**El estado del vehículo. */
     protected EstadoVehiculo estadoActual;
 
+    /**Constructor de la clase, setea el estado en EstadoEsperando. */
+    public Vehiculo(){
+        estadoActual = new EstadoEsperando(this);
+    }
+
     /**
      * Método para seguir la ruta del viaje.
      * @param terreno el tipo de terreno que seguirá la ruta.
@@ -22,11 +27,6 @@ public abstract class Vehiculo {
      * @return una descripción general del vehiculo.
      */
     public abstract String descripcion();
-
-    /**Constructor de la clase, setea el estado en EstadoEsperando. */
-    public Vehiculo(){
-        estadoActual = new EstadoEsperando(this);
-    }
 
     /**
      * Método general de un viaje dados los datos del mismo.
