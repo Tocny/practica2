@@ -20,4 +20,9 @@ public class SensorDeEstacionamiento extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Sensor de estacionamiento";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new SensorDeEstacionamiento(vehiculo);
+    }
 }

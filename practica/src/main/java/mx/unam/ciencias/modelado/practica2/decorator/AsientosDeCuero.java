@@ -18,6 +18,11 @@ public class AsientosDeCuero extends Aditamento{
      * @return la descrición del vehiculo con la cadena ", Asientos de cuero"
      */
     @Override public String descripcion(){
-        return super.vehiculo.descripcion() + "\n -Asientos de cuero";
+        return super.vehiculo.descripcion() + "\n-Asientos de cuero";
+    }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new AsientosDeCuero(vehiculo);
     }
 }

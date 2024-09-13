@@ -21,5 +21,8 @@ public class BocinasBoze extends Aditamento{
         return super.vehiculo.descripcion() + "\n-Bocinas Boze";
     }
 
-
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new BocinasBoze(vehiculo);
+    }
 }

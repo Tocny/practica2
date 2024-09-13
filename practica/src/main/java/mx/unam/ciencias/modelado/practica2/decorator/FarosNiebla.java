@@ -20,4 +20,9 @@ public class FarosNiebla extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Faros niebla";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new FarosNiebla(vehiculo);
+    }
 }

@@ -20,4 +20,9 @@ public class VidriosPolarizados extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Vidrios polarizados";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new VidriosPolarizados(vehiculo);
+    }
 }

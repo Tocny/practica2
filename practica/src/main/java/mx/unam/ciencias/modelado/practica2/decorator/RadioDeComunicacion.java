@@ -20,4 +20,9 @@ public class RadioDeComunicacion extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Radio de comunicación";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new RadioDeComunicacion(vehiculo);
+    }
 }

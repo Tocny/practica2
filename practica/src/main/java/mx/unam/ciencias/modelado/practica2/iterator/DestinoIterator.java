@@ -1,48 +1,60 @@
 package mx.unam.ciencias.modelado.practica2.iterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import mx.unam.ciencias.modelado.practica2.simulaciones.Coordenadas;
 
 /**
  * Clase para el iterador de los destinos.
- * En sí solo es una clase para sobrecargar los métodos del iterador de un Diccionario del jdk.
+ * Implementa la interfaz Iterator para un diccionario de la forma <String, Coordenadas>
  */
-public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>>{
+public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>> {
 
-    /**Iterador del Diccionario. */
-    private Iterator<Map.Entry<String, Coordenadas>> iterador;
+    /** Diccionario de destinos. */
+    private Map<String, Coordenadas> diccionario;
+    
+    /** Lista de destinos (keys) del diccionario. */
+    private List<String> destinos;
+
+    /** Posicion del iterador*/
+    private int posicion = 0;
 
     /**
-     * Constructor de la clase, asigna el iterador.
-     * @param diccionario un diccionario del que obtener su iterador.
+     * Constructor de la clase, asigna el diccionario y le extrae las llaves para asignarlas a la lista de destinos.
+     * @param diccionario un diccionario de la forma <String,Coordenadas>
      */
-    public DestinoIterator(Map<String, Coordenadas> diccionario){
-        this.iterador = diccionario.entrySet().iterator();
+    public DestinoIterator(Map<String, Coordenadas> diccionario) {
+        this.diccionario = diccionario;
+        this.destinos = new ArrayList<>(diccionario.keySet());
     }
 
     /**
-     * Método hasNext()
-     * @return el método hasNext() del iterador.
+     * Implementación concreta del método hasNext().
+     * @return Si la posicion es menor al tamaño de la lista de destinos.
      */
-    @Override public boolean hasNext(){
-        return iterador.hasNext();
+    @Override public boolean hasNext() {
+        return posicion < destinos.size();
     }
 
     /**
-     * Método next()
-     * @return el método next() del iterador.
+     * IMplementacion concreta del método next().
+     * @return la entrada siguiente a la posición del iterador.
      */
-    @Override public Map.Entry<String, Coordenadas> next(){
-        return iterador.next();
+    @Override public Map.Entry<String, Coordenadas> next() {
+        String destino = destinos.get(posicion++);
+        return Map.entry(destino, diccionario.get(destino));
     }
 
     /**
-     * Método remove()
-     * Usa el método remove() del iterador.
+     * Implementacion concreta del método remove().
+     * Elimina la entrada en la posición del iterador.
      */
-    @Override public void remove(){
-        iterador.remove();
+    @Override public void remove() {
+        String destino = destinos.get(posicion); // Para eliminar el último elemento retornado.
+        diccionario.remove(destino);
+        destinos.remove(posicion);
+        posicion--;
     }
-
 }

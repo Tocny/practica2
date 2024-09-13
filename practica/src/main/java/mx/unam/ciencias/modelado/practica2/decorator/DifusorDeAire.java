@@ -20,4 +20,9 @@ public class DifusorDeAire extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Difusor de aire";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new DifusorDeAire(vehiculo);
+    }
 }

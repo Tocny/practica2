@@ -43,6 +43,7 @@ public class VehiculoIterator implements Iterator<Vehiculo>{
      */
     public void remove(){
         vehiculos.remove(posicion);
+        posicion--;
     }
 
 }

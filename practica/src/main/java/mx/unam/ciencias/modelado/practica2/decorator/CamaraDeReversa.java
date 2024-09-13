@@ -20,4 +20,9 @@ public class CamaraDeReversa extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Cámara de reversa";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new CamaraDeReversa(vehiculo);
+    }
 }

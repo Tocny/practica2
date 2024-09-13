@@ -20,4 +20,9 @@ public class LlantasTodoTerreno extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Llantas todo terreno";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new LlantasTodoTerreno(vehiculo);
+    }
 }

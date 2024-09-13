@@ -21,4 +21,9 @@ public class AleronDeportivo extends Aditamento{
         return super.vehiculo.descripcion() + "\n-Alerón deportivo";
     }
 
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new AleronDeportivo(vehiculo);
+    }
+
 }

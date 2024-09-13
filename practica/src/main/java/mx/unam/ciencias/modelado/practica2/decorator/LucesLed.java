@@ -20,4 +20,9 @@ public class LucesLed extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Luces led";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new LucesLed(vehiculo);
+    }
 }

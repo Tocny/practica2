@@ -20,4 +20,9 @@ public class SuspensionRegulable extends Aditamento{
     @Override public String descripcion(){
         return super.vehiculo.descripcion() + "\n-Suspensión regulable";
     }
+
+    /**Implementación concreta del método envolver. */
+    @Override public Vehiculo envolver(Vehiculo vehiculo){
+        return new SuspensionRegulable(vehiculo);
+    }
 }

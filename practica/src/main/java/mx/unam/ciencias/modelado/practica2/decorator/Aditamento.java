@@ -40,4 +40,13 @@ public abstract class Aditamento extends Vehiculo{
      */
     @Override public abstract String descripcion();
 
+    /**
+     * Método abstracto para envolver un vehículo en el mismo aditamento que una instancia de la clase.
+     * Este método es "feo" pero nos sirve para acoplar los procesos de decorado de vehiculos a un mismo método.
+     * @param vehiculo una instancia de vehiculo.
+     * @return Una instancia de vehiculo pero con un aditamento especifico.
+     */
+    public abstract Vehiculo envolver(Vehiculo vehiculo);
+
+
 }

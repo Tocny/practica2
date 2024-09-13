@@ -98,42 +98,7 @@ public class AditamentosManager{
      * @param aditamento el aditamento a colocar.
      */
     private void aplicaAditamento(Aditamento aditamento){
-        if (aditamento instanceof FarosNiebla) {
-            vehiculo = new FarosNiebla(vehiculo);
-
-        } else if (aditamento instanceof VidriosPolarizados) {
-            vehiculo = new VidriosPolarizados(vehiculo);
-
-        } else if (aditamento instanceof RadioDeComunicacion) {
-            vehiculo = new RadioDeComunicacion(vehiculo);
-
-        } else if (aditamento instanceof AleronDeportivo) {
-            vehiculo = new AleronDeportivo(vehiculo);
-
-        } else if (aditamento instanceof LlantasTodoTerreno) {
-            vehiculo = new LlantasTodoTerreno(vehiculo);
-
-        } else if (aditamento instanceof SuspensionRegulable) {
-            vehiculo = new SuspensionRegulable(vehiculo);
-
-        } else if (aditamento instanceof CamaraDeReversa) {
-            vehiculo = new CamaraDeReversa(vehiculo);
-
-        } else if (aditamento instanceof SensorDeEstacionamiento) {
-            vehiculo = new SensorDeEstacionamiento(vehiculo);
-
-        } else if (aditamento instanceof LucesLed) {
-            vehiculo = new LucesLed(vehiculo);
-
-        } else if (aditamento instanceof AsientosDeCuero) {
-            vehiculo = new AsientosDeCuero(vehiculo);
-
-        } else if (aditamento instanceof BocinasBoze) {
-            vehiculo = new BocinasBoze(vehiculo);
-
-        } else if (aditamento instanceof DifusorDeAire) {
-            vehiculo = new DifusorDeAire(vehiculo);
-        }
+        vehiculo = aditamento.envolver(vehiculo);
     }
 
 
