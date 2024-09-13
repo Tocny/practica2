@@ -12,19 +12,25 @@ import mx.unam.ciencias.modelado.practica2.simulaciones.Terreno;
  */
 public class VehiculoNulo extends Vehiculo{
 
-    /**Método de seguir ruta. */
+    /**
+     * Implementación concreta del método sigueRuta.
+     * @param terreno el tipo de terreno para la ruta.
+     */
     @Override public void sigueRuta(Terreno terreno){
         System.out.println("Este vehiculo no existe.");
-        super.setEstado(new EstadoEnMovimiento());
+        super.estadoActual.movimiento();
+        super.estadoActual.abrirPuertas();
     }
 
-    /**Método de alerta de combustible. */
+    /**Implementacion concreta de alertaCombustble, solo indica que este vehiculo no existe. */
     @Override public void alertaCombustible(){
-        super.setEstado(new EstadoEsperando());
         System.out.println("Este vehiculo no existe.");
-        super.setEstado(new EstadoEnMovimiento());
     }
     
+    /**
+     * Implementacion concreta del método descripción
+     * @return la cadena "Este vehículo no existe. "
+     */
     @Override public String descripcion(){
         return "Este vehiculo no existe.";
     }

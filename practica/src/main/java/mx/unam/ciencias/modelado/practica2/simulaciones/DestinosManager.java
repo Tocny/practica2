@@ -156,12 +156,13 @@ public class DestinosManager{
 
     /**
      * Método para simular el viaje de un vehículo.
-     * @param vehiculo una instancia de vehiculo.
+     * @param modelo una instancia de vehiculo que consiste en el modelo base escogido por el usuario.
+     * @param vehiculoUsuario el vehiculo tuneado por el usuario.
      */
     public void simularViaje(Vehiculo modelo, Vehiculo vehiculoUsuario){
         seleccionaPartidaDestino();
         double tiempo = calcularTiempoViaje(modelo);
         double distancia = calcularDistancia();
-        vehiculoUsuario.ejecutaViaje(terreno, destino, tiempo);
+        vehiculoUsuario.ejecutaViaje(terreno, ubicacion, destino, tiempo, distancia);
     }
 }

@@ -21,7 +21,7 @@ public abstract class Aditamento extends Vehiculo{
 
     /**
      * Método que sobrecarga el método sigue ruta.
-     * @return la cadena del método sigueRuta() del vehiculo local.
+     * @param terreno el terreno de la ruta.
      */
     @Override public void sigueRuta(Terreno terreno){
         vehiculo.sigueRuta(terreno);
@@ -29,7 +29,6 @@ public abstract class Aditamento extends Vehiculo{
 
     /**
      * Método que sobrecarga el método alerta combustible.
-     * @return la cadena del método alertaCombustible() del vehiculo local.
      */
     @Override public void alertaCombustible(){
         vehiculo.alertaCombustible();

@@ -32,6 +32,7 @@ public class DestinoIterable implements Iterable<Map.Entry<String, Coordenadas>>
     /**
      * Método para obtener las coordenadas de un destino.
      * @param destino una cadena.
+     * @return las coordenadas asociadas a la clave destino.
      */
     public Coordenadas getCoordenadas(String destino){
         return diccionario.get(destino);

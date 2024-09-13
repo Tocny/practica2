@@ -8,22 +8,27 @@ import mx.unam.ciencias.modelado.practica2.simulaciones.Terreno;
 /** Clase concreta del vehiculo */
 public class Vehiculo4x4 extends Vehiculo{
 
-    // Constructor
-    public Vehiculo4x4() {
-        super.setEstado(new EstadoEsperando());
-    }
-
+    /**
+     * Implementación concreta del método sigueRuta.
+     * @param terreno el tipo de terreno para la ruta.
+     */
     @Override public void sigueRuta(Terreno terreno){
         System.out.println("El vehiculo 4x4 sigue la ruta mediante " + terreno.name().toLowerCase() + ".");
-        super.setEstado(new EstadoEnMovimiento());
+        super.estadoActual.movimiento();
+        super.estadoActual.abrirPuertas();
     }
 
+    /**Implementacion concreta de alertaCombustble, maneja los estados y mensajes de este evento. */
     @Override public void alertaCombustible(){
-        super.setEstado(new EstadoEsperando());
+        super.estadoActual.sinCombustible();
         Colors.println("El vehiculo 4x4 recarga biodiesel.", Colors.GREEN + Colors.HIGH_INTENSITY + Colors.UNDERLINE);
-        super.setEstado(new EstadoEnMovimiento());
+        super.estadoActual.movimiento();
     }
     
+    /**
+     * Implementacion concreta del método descripción
+     * @return la cadena "Vehiculo 4x4: "
+     */
     @Override public String descripcion(){
         return "Vehiculo 4x4: ";
     }

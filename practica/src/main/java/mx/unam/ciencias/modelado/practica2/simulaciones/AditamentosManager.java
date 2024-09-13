@@ -21,7 +21,10 @@ public class AditamentosManager{
     /**El máximo numero de aditamentos permitidos para el usuario. */
     private static final int MAXIMO_ADITAMENTOS = 6;
 
-    /**Constructor de la clase, inicializa el iterador. */
+    /**
+     * Constructor de la clase, inicializa el iterador.
+     * @param vehiculo una instancia de {@code Vehiculo}
+     *  */
     public AditamentosManager(Vehiculo vehiculo){
         this.vehiculo = vehiculo;
         aditamentos = new VehiculoIterable();
@@ -52,13 +55,13 @@ public class AditamentosManager{
      */
     public String menuAditamentos(){
         StringBuilder sb = new StringBuilder();
-        sb.append("");
+        sb.append("\n Aditamentos disponibles:");
         int indice = 0;
         
         for(Vehiculo aditamento: aditamentos){
-            sb.append("\t" + (indice++) + "." + aditamento.getClass().getSimpleName() + "\n");
+            sb.append("\n\t" + (indice++) + "." + aditamento.getClass().getSimpleName());
         }
-        sb.append("\t" + aditamentos.getLongitud() + ". Proceder con el viaje.");
+        sb.append("\n\t" + aditamentos.getLongitud() + ". Proceder con el viaje.");
 
         return sb.toString();
     }
@@ -68,8 +71,6 @@ public class AditamentosManager{
      * @return el vehículo tuneado por el usuario.
      */
     public Vehiculo seleccionaAditamentos(){
-        Colors.println("Seleccione los aditamentos para el vehículo.", Colors.GREEN);
-
         while(contadorAditamentos < MAXIMO_ADITAMENTOS){
             Colors.println(menuAditamentos(), Colors.GREEN);
             int eleccion = MetodosGet.getInt("Ingrese su elección: ", "Entrada inválida.", 0, aditamentos.getLongitud());
