@@ -8,7 +8,7 @@ import mx.unam.ciencias.modelado.practica2.simulaciones.Coordenadas;
 
 /**
  * Clase para el iterador de los destinos.
- * Implementa la interfaz Iterator para un diccionario de la forma <String, Coordenadas>
+ * Implementa la interfaz Iterator para un diccionario de la forma String-Coordenadas
  */
 public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>> {
 
@@ -23,7 +23,7 @@ public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>>
 
     /**
      * Constructor de la clase, asigna el diccionario y le extrae las llaves para asignarlas a la lista de destinos.
-     * @param diccionario un diccionario de la forma <String,Coordenadas>
+     * @param diccionario un diccionario de la forma String-Coordenadas
      */
     public DestinoIterator(Map<String, Coordenadas> diccionario) {
         this.diccionario = diccionario;
@@ -52,7 +52,7 @@ public class DestinoIterator implements Iterator<Map.Entry<String, Coordenadas>>
      * Elimina la entrada en la posición del iterador.
      */
     @Override public void remove() {
-        String destino = destinos.get(posicion); // Para eliminar el último elemento retornado.
+        String destino = destinos.get(posicion);
         diccionario.remove(destino);
         destinos.remove(posicion);
         posicion--;
