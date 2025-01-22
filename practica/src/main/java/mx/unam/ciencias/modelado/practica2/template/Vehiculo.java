@@ -4,6 +4,9 @@ import mx.unam.ciencias.modelado.practica2.common.Colors;
 import mx.unam.ciencias.modelado.practica2.state.*;
 import mx.unam.ciencias.modelado.practica2.simulaciones.Terreno;
 
+/**
+ * Clase Vehiculo.
+ */
 public abstract class Vehiculo {
     /**El estado del vehículo. */
     protected EstadoVehiculo estadoActual;
